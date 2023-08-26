@@ -1,7 +1,8 @@
 const Joi = require("joi");
 const dotenv = require("dotenv");
+const path = require("path");
 
-dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 const envVarsSchema = Joi.object({
   PORT: Joi.number().default(3000),
